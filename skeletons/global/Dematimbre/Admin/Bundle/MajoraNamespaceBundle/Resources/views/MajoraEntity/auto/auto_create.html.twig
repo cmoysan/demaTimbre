@@ -1,0 +1,10 @@
+{# @MajoraGenerator({"force_generation": true}) #}
+{% extends 'DematimbreAdminMajoraNamespaceBundle:MajoraEntity:form.html.twig' %}
+
+{% block active_breadcrumb %}
+    <li class="active">{{ 'admin.majora_entity.breadcrumb.create'|trans }}</li>
+{% endblock %}
+
+{% block majora_entity_form_action url('dematimbre_admin_majora_entity_create') %}
+
+{% block majora_entity_form_title 'admin.majora_entity.creation.title'|trans %}

@@ -1,0 +1,43 @@
+# @MajoraGenerator({"force_generation": true})
+
+dematimbre_rest_api_majora_entity_cget:
+    path: /
+    defaults:
+        _controller: DematimbreApiMajoraNamespaceBundle:MajoraEntityApi:cget
+    methods:
+        - GET
+
+dematimbre_rest_api_majora_entity_create:
+    path: /
+    defaults:
+        _controller: DematimbreApiMajoraNamespaceBundle:MajoraEntityApi:post
+    methods:
+        - POST
+
+dematimbre_rest_api_majora_entity_get:
+    path: /{id}
+    defaults:
+        _controller: DematimbreApiMajoraNamespaceBundle:MajoraEntityApi:get
+    requirements:
+        id: \d+
+    methods:
+        - GET
+
+dematimbre_rest_api_majora_entity_put:
+    path: /{id}
+    defaults:
+        _controller: DematimbreApiMajoraNamespaceBundle:MajoraEntityApi:put
+    requirements:
+        id: \d+
+    methods:
+        - PUT
+        - PATCH
+
+dematimbre_rest_api_majora_entity_delete:
+    path: /{id}
+    defaults:
+        _controller: DematimbreApiMajoraNamespaceBundle:MajoraEntityApi:delete
+    requirements:
+        id: \d+
+    methods:
+        - DELETE

@@ -1,0 +1,26 @@
+{# @MajoraGenerator({"force_generation": true}) #}
+{% extends 'DematimbreAdminCustomerBundle:Person:layout.html.twig' %}
+
+{% block content %}
+<div class="panel">
+    <header class="panel-heading composed red">
+        <span class="combo">{{ block('person_icon') }}</span>
+        <h3>{% block person_form_title '' %}</h3>
+        <a class="combo pull-right" href="{{ url('dematimbre_admin_person_list') }}">
+            <i class="fa fa-times"></i>
+            {{ 'admin.person.form.cancel_button'|trans }}
+        </a>
+    </header>
+    <div class="panel-body">
+        <form action="{% block person_form_action '' %}"
+            method="POST" {{ form_enctype(form) }} >
+            {{ form_rest(form) }}
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-check"></i>
+                {{ 'admin.person.form.submit_button' }}
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

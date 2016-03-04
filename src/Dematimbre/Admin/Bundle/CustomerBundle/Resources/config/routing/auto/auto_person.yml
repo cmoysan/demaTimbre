@@ -1,0 +1,46 @@
+# @MajoraGenerator({"force_generation": true})
+
+dematimbre_admin_person_list:
+    path: /
+    defaults:
+        _controller: DematimbreAdminCustomerBundle:PersonAdmin:list
+
+dematimbre_admin_person_create:
+    path: /create
+    defaults:
+        _controller: DematimbreAdminCustomerBundle:PersonAdmin:create
+
+dematimbre_admin_person_details:
+    path: /{id}/details
+    defaults:
+        _controller: DematimbreAdminCustomerBundle:PersonAdmin:details
+    requirements:
+        id: \d+
+
+dematimbre_admin_person_update:
+    path: /{id}/update
+    defaults:
+        _controller: DematimbreAdminCustomerBundle:PersonAdmin:update
+    requirements:
+        id: \d+
+
+dematimbre_admin_person_delete:
+    path: /{id}/delete
+    defaults:
+        _controller: DematimbreAdminCustomerBundle:PersonAdmin:delete
+    requirements:
+        id: \d+
+
+dematimbre_admin_person_collection_enable:
+    path: /collection_enable
+    defaults:
+        _controller: DematimbreAdminCustomerBundle:PersonAdmin:enableCollection
+    methods:
+        - POST
+
+dematimbre_admin_person_collection_disable:
+    path: /collection_disable
+    defaults:
+        _controller: DematimbreAdminCustomerBundle:PersonAdmin:disableCollection
+    methods:
+        - POST

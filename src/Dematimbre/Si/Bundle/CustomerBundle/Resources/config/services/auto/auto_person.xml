@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+
+<!-- @MajoraGenerator({"force_generation": true}) -->
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <!-- Person Domain -->
+        <service id="dematimbre.person.domain"
+            class="Dematimbre\Si\Component\Customer\Domain\PersonDomain"
+            parent="majora.domain.abstract"
+            public="true"
+        >
+            <argument type="service" id="dematimbre.person.repository" />
+        </service>
+
+        <!-- Person Loader -->
+        <service id="dematimbre.person.loader"
+            class="Dematimbre\Si\Component\Customer\Loader\Doctrine\PersonDoctrineLoader"
+            parent="majora.loader.abstract"
+            public="true" lazy="true"
+        >
+            <tag name="majora.loader"
+                repository="dematimbre.person.repository"
+                entityClass="Dematimbre\Si\Component\Customer\Entity\Person"
+                entityCollection="Dematimbre\Si\Component\Customer\Entity\PersonCollection"
+            />
+        </service>
+
+        <!-- Person Repository -->
+        <service id="dematimbre.person.repository"
+            class="Dematimbre\Si\Component\Customer\Repository\Doctrine\PersonDoctrineRepository"
+            parent="majora.doctrine_repository.abstract"
+            public="false"
+        >
+            <factory service="doctrine" method="getRepository" />
+            <argument>DematimbreSiCustomer:Person</argument>
+            <argument>ddp_em</argument>
+        </service>
+
+        <!-- Person Form Type -->
+        <service id="dematimbre.person.form_type"
+            class="Dematimbre\Si\Bundle\CustomerBundle\Form\Type\PersonType"
+            public="true"
+        >
+            <tag name="form.type" alias="person" />
+        </service>
+
+    </services>
+
+</container>

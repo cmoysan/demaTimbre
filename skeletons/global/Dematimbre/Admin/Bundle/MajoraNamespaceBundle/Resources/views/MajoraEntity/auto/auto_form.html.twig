@@ -1,0 +1,26 @@
+{# @MajoraGenerator({"force_generation": true}) #}
+{% extends 'DematimbreAdminMajoraNamespaceBundle:MajoraEntity:layout.html.twig' %}
+
+{% block content %}
+<div class="panel">
+    <header class="panel-heading composed red">
+        <span class="combo">{{ block('majora_entity_icon') }}</span>
+        <h3>{% block majora_entity_form_title '' %}</h3>
+        <a class="combo pull-right" href="{{ url('dematimbre_admin_majora_entity_list') }}">
+            <i class="fa fa-times"></i>
+            {{ 'admin.majora_entity.form.cancel_button'|trans }}
+        </a>
+    </header>
+    <div class="panel-body">
+        <form action="{% block majora_entity_form_action '' %}"
+            method="POST" {{ form_enctype(form) }} >
+            {{ form_rest(form) }}
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-check"></i>
+                {{ 'admin.majora_entity.form.submit_button' }}
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

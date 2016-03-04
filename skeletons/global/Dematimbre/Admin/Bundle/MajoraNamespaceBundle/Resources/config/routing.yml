@@ -1,0 +1,3 @@
+# @MajoraGenerator({"include_routing": {"target": "/config/routing/routing_admin.yml"}})
+# @MajoraGenerator({"include_routing": {"route": "dematimbre_admin_majora_namespace"}})
+# @MajoraGenerator({"include_routing": {"resource": "@DematimbreAdminMajoraNamespaceBundle/Resources/config/routing.yml"}})

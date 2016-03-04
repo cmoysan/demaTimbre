@@ -1,0 +1,19 @@
+{# @MajoraGenerator({"force_generation": true}) #}
+{% extends 'DematimbreAdminMajoraNamespaceBundle:MajoraEntity:form.html.twig' %}
+
+{% block inactive_breadcrumbs %}
+    {{ parent() }}
+    <li>
+        <a href="{{ url('dematimbre_admin_majora_entity_update', { 'id': majoraEntity.id }) }}">
+        {{ 'admin.majora_entity.breadcrumb.label'|trans({'%label%': block('majora_entity_label')}) }}
+        </a>
+    </li>
+{% endblock %}
+
+{% block active_breadcrumb %}
+    <li class="active">{{ 'admin.majora_entity.breadcrumb.update'|trans }}</li>
+{% endblock %}
+
+{% block majora_entity_form_action url('dematimbre_admin_majora_entity_update', { 'id': majoraEntity.id }) %}
+
+{% block majora_entity_form_title 'admin.majora_entity.update.title'|trans({'%label%': block('majora_entity_label')}) %}

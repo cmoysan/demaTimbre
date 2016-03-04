@@ -1,0 +1,22 @@
+# app:
+#     resource: "@AppBundle/Controller/"
+
+
+
+# Gesco admin routing
+gesco_admin:
+    resource: routing/routing_admin.yml
+    prefix: /admin
+    defaults:
+        _locale: %locale%
+    options:
+        expose: true
+
+# Gesco admin routing
+gesco_api:
+    resource: routing/routing_api.yml
+    prefix: /api
+    defaults:
+        _locale: %locale%
+    options:
+        expose: true

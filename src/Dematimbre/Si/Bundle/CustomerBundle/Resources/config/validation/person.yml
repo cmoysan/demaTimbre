@@ -1,0 +1,5 @@
+Dematimbre\Si\Component\Customer\Entity\Person:
+    properties: ~
+        # example:
+        #     - NotBlank:
+        #         groups: [creation]

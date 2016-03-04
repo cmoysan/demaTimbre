@@ -1,0 +1,15 @@
+{% extends 'DematimbreAdminAppBundle::layout.html.twig' %}
+
+{% block content %}
+
+<div class="panel">
+    <header class="panel-heading composed green">
+        <span class="combo">{{ block('dematimbre_icon') }}</span>
+        <h3>{{ 'admin.customer.list.title'|trans }}</h3>
+        <a class="combo pull-right" href="#">
+            <i class="fa fa-plus"></i>
+            {{ 'admin.customer.list.create_button'|trans }}
+        </a>
+    </header>
+</div>
+{% endblock %}

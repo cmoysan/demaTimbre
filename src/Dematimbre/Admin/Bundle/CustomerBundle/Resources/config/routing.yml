@@ -1,0 +1,7 @@
+# @MajoraGenerator({"include_routing": {"target": "/config/routing/routing_admin.yml"}})
+# @MajoraGenerator({"include_routing": {"route": "dematimbre_admin_customer"}})
+# @MajoraGenerator({"include_routing": {"resource": "@DematimbreAdminCustomerBundle/Resources/config/routing.yml"}})
+
+dematimbre_admin_person:
+    resource: "routing/person.yml"
+    prefix: /persons

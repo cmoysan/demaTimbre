@@ -1,0 +1,46 @@
+# @MajoraGenerator({"force_generation": true})
+
+dematimbre_admin_majora_entity_list:
+    path: /
+    defaults:
+        _controller: DematimbreAdminMajoraNamespaceBundle:MajoraEntityAdmin:list
+
+dematimbre_admin_majora_entity_create:
+    path: /create
+    defaults:
+        _controller: DematimbreAdminMajoraNamespaceBundle:MajoraEntityAdmin:create
+
+dematimbre_admin_majora_entity_details:
+    path: /{id}/details
+    defaults:
+        _controller: DematimbreAdminMajoraNamespaceBundle:MajoraEntityAdmin:details
+    requirements:
+        id: \d+
+
+dematimbre_admin_majora_entity_update:
+    path: /{id}/update
+    defaults:
+        _controller: DematimbreAdminMajoraNamespaceBundle:MajoraEntityAdmin:update
+    requirements:
+        id: \d+
+
+dematimbre_admin_majora_entity_delete:
+    path: /{id}/delete
+    defaults:
+        _controller: DematimbreAdminMajoraNamespaceBundle:MajoraEntityAdmin:delete
+    requirements:
+        id: \d+
+
+dematimbre_admin_majora_entity_collection_enable:
+    path: /collection_enable
+    defaults:
+        _controller: DematimbreAdminMajoraNamespaceBundle:MajoraEntityAdmin:enableCollection
+    methods:
+        - POST
+
+dematimbre_admin_majora_entity_collection_disable:
+    path: /collection_disable
+    defaults:
+        _controller: DematimbreAdminMajoraNamespaceBundle:MajoraEntityAdmin:disableCollection
+    methods:
+        - POST

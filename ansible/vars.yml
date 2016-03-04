@@ -1,0 +1,13 @@
+workspace: workspace
+
+timezone: UTC
+
+sites: sites
+
+php_version: '5.6'
+
+mysql:
+    databases:
+        - { name: 'DemaTimbre' }
+    users:
+        - { name: 'DemaTimbre', password: 'DemaTimbre' }

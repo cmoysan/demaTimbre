@@ -1,0 +1,57 @@
+# @MajoraGenerator({"register_doctrine_em": {"em": "ddp_em"}})
+# @MajoraGenerator({"register_doctrine_em": {"prefix": "Dematimbre\\Si\\Component\\MajoraNamespace\\Entity"}})
+# @MajoraGenerator({"register_doctrine_em": {"bundle": "DematimbreSiMajoraNamespaceBundle"}})
+# @MajoraGenerator({"register_doctrine_em": {"alias": "DematimbreSiMajoraNamespace"}})
+
+Dematimbre\Si\Component\MajoraNamespace\Entity\MajoraEntity:
+    type: entity
+    repositoryClass: Dematimbre\Si\Component\MajoraNamespace\Repository\Doctrine\MajoraEntityDoctrineRepository
+    table: dematimbre_si_majora_entity
+    actAs:
+        Timestampable: ~
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+
+        # your other MajoraEntity properties here
+
+        createdAt:
+            type: datetime
+            column: created_at
+            gedmo:
+                timestampable:
+                    on: create
+        updatedAt:
+            type: datetime
+            column: updated_at
+            gedmo:
+                timestampable:
+                    on: update
+
+    # manyToOne:
+    #     example:
+    #         targetEntity: Example
+    #         inversedBy: majoraEntitys
+    #         joinColumn:
+    #             name: example_id
+    #             referencedColumnName: id
+
+    # oneToMany:
+    #     examples:
+    #         targetEntity: Example
+    #         mappedBy: majoraEntity
+    #         cascade: ['persist', 'remove']
+
+    # manyToMany:
+    #     examples:
+    #         targetEntity: Example
+    #         joinTable:
+    #             name: dematimbre_majora_entity_example
+    #             joinColumns:
+    #                 majora_entity_id:
+    #                     referencedColumnName: id
+    #             inverseJoinColumns:
+    #                 example_id:
+    #                     referencedColumnName: id

@@ -1,0 +1,16 @@
+{# @MajoraGenerator({"force_generation": true}) #}
+{% extends 'DematimbreAdminMajoraNamespaceBundle::layout.html.twig' %}
+
+{% block majora_entity_icon '' %}
+
+{% block majora_entity_label majoraEntity is defined ? majoraEntity.id : '' %}
+
+{% block inactive_breadcrumbs %}
+    {{ parent() }}
+    <li>
+        <a href="{{ url('dematimbre_admin_majora_entity_list') }}">
+        {{ block('majora_entity_icon') }}
+        {{ 'admin.majora_entity.breadcrumb.base'|trans }}
+        </a>
+    </li>
+{% endblock %}

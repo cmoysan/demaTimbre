@@ -1,0 +1,19 @@
+{# @MajoraGenerator({"force_generation": true}) #}
+{% extends 'DematimbreAdminCustomerBundle:Person:form.html.twig' %}
+
+{% block inactive_breadcrumbs %}
+    {{ parent() }}
+    <li>
+        <a href="{{ url('dematimbre_admin_person_update', { 'id': person.id }) }}">
+        {{ 'admin.person.breadcrumb.label'|trans({'%label%': block('person_label')}) }}
+        </a>
+    </li>
+{% endblock %}
+
+{% block active_breadcrumb %}
+    <li class="active">{{ 'admin.person.breadcrumb.update'|trans }}</li>
+{% endblock %}
+
+{% block person_form_action url('dematimbre_admin_person_update', { 'id': person.id }) %}
+
+{% block person_form_title 'admin.person.update.title'|trans({'%label%': block('person_label')}) %}

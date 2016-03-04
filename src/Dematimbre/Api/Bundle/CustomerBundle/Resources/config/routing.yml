@@ -1,0 +1,7 @@
+# @MajoraGenerator({"include_routing": {"target": "/config/routing/routing_api.yml"}})
+# @MajoraGenerator({"include_routing": {"route": "dematimbre_api_customer"}})
+# @MajoraGenerator({"include_routing": {"resource": "@DematimbreApiCustomerBundle/Resources/config/routing.yml"}})
+
+dematimbre_api_person:
+    resource: "routing/person.yml"
+    prefix: /persons

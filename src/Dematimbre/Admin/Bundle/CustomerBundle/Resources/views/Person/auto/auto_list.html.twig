@@ -1,0 +1,94 @@
+{# @MajoraGenerator({"force_generation": true}) #}
+{% extends 'DematimbreAdminCustomerBundle:Person:layout.html.twig' %}
+
+{% block active_breadcrumb %}
+    <li class="active">{{ 'admin.person.breadcrumb.list'|trans }}</li>
+{% endblock %}
+
+{% block content %}
+<div class="panel">
+    <header class="panel-heading composed red">
+        <span class="combo">{{ block('person_icon') }}</span>
+        <h3>{{ 'admin.person.list.title'|trans }}</h3>
+        <a class="combo pull-right" href="{{ url('dematimbre_admin_person_create') }}">
+            <i class="fa fa-plus"></i>
+            {{ 'admin.person.list.create_button'|trans }}
+        </a>
+    </header>
+    <div class="panel-body">
+        <table class="table table-striped table-bordered table-hover table-advance">
+            <thead>
+                <tr>
+                {% block person_list_thead_checkbox %}
+                {#
+                    <td class="datatable-unsortable"><input type="checkbox" class="table-checkbox-master"></td>
+                #}
+                {% endblock %}
+                {% block person_list_thead %}
+                    <td class="datatable-default-sort">Id</td>
+                {% endblock %}
+                    <td class="actions datatable-unsortable">
+                        {{ 'admin.person.list.table.head_actions'|trans }}
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for person in personCollection %}
+                <tr>
+                {% block person_list_tr_checkbox %}
+                {#
+                    <td>
+                        <input type="checkbox" class="table-checkbox" name="elementIds[]" value="{{ person.id }}">
+                    </td>
+                #}
+                {% endblock %}
+                {% block person_list_tr %}
+                    <td><a href="{{ url('dematimbre_admin_person_update', { id: person.id }) }}">
+                        {{ person.id }}
+                    </a></td>
+                {% endblock %}
+                    <td class="actions">
+                    {% block person_list_tr_action %}
+                        <a class="btn btn-primary btn-xs"
+                            href="{{ url('dematimbre_admin_person_update', { id: person.id }) }}">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                    {% endblock %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ include('DematimbreAdminAppBundle:Includes:datatables.html.twig') }}
+{% endblock %}
+
+{% block js_templates %}
+{# uncomment this to set actions on checked elements
+    <div class="template" data-template="list_checkbox_actions">
+        <div class="dematimbredown datatable-checkbox-actions">
+            <a href="#" class="dematimbredown-toggle btn btn-default" data-toggle="dematimbredown" aria-expanded="false">
+                <span>{{ 'admin.datatables.checkbox_actions'|trans }}</span>
+                <b class="caret"></b>
+            </a>
+            <ul class="dematimbredown-menu extended">
+                <li>
+                    <a data-action="{{ url('dematimbre_admin_person_collection_enable') }}" class="checkbox-action" href="#">
+                        {{ 'admin.person.list.actions.enable'|trans }}
+                    </a>
+                </li>
+                <li>
+                    <a data-action="{{ url('dematimbre_admin_person_collection_disable') }}" class="checkbox-action" href="#">
+                        {{ 'admin.person.list.actions.disable'|trans }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+#}
+{% endblock %}

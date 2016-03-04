@@ -1,0 +1,4 @@
+
+dematimbre_api_customer:
+    resource: "@DematimbreApiCustomerBundle/Resources/config/routing.yml"
+

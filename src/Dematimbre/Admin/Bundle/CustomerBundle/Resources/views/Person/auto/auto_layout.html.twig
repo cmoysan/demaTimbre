@@ -1,0 +1,16 @@
+{# @MajoraGenerator({"force_generation": true}) #}
+{% extends 'DematimbreAdminCustomerBundle::layout.html.twig' %}
+
+{% block person_icon '' %}
+
+{% block person_label person is defined ? person.id : '' %}
+
+{% block inactive_breadcrumbs %}
+    {{ parent() }}
+    <li>
+        <a href="{{ url('dematimbre_admin_person_list') }}">
+        {{ block('person_icon') }}
+        {{ 'admin.person.breadcrumb.base'|trans }}
+        </a>
+    </li>
+{% endblock %}

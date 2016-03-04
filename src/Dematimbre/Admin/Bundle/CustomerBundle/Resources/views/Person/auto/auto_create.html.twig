@@ -1,0 +1,10 @@
+{# @MajoraGenerator({"force_generation": true}) #}
+{% extends 'DematimbreAdminCustomerBundle:Person:form.html.twig' %}
+
+{% block active_breadcrumb %}
+    <li class="active">{{ 'admin.person.breadcrumb.create'|trans }}</li>
+{% endblock %}
+
+{% block person_form_action url('dematimbre_admin_person_create') %}
+
+{% block person_form_title 'admin.person.creation.title'|trans %}

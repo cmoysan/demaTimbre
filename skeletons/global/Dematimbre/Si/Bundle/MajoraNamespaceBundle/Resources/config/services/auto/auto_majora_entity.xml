@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+
+<!-- @MajoraGenerator({"force_generation": true}) -->
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <!-- MajoraEntity Domain -->
+        <service id="dematimbre.majora_entity.domain"
+            class="Dematimbre\Si\Component\MajoraNamespace\Domain\MajoraEntityDomain"
+            parent="majora.domain.abstract"
+            public="true"
+        >
+            <argument type="service" id="dematimbre.majora_entity.repository" />
+        </service>
+
+        <!-- MajoraEntity Loader -->
+        <service id="dematimbre.majora_entity.loader"
+            class="Dematimbre\Si\Component\MajoraNamespace\Loader\Doctrine\MajoraEntityDoctrineLoader"
+            parent="majora.loader.abstract"
+            public="true" lazy="true"
+        >
+            <tag name="majora.loader"
+                repository="dematimbre.majora_entity.repository"
+                entityClass="Dematimbre\Si\Component\MajoraNamespace\Entity\MajoraEntity"
+                entityCollection="Dematimbre\Si\Component\MajoraNamespace\Entity\MajoraEntityCollection"
+            />
+        </service>
+
+        <!-- MajoraEntity Repository -->
+        <service id="dematimbre.majora_entity.repository"
+            class="Dematimbre\Si\Component\MajoraNamespace\Repository\Doctrine\MajoraEntityDoctrineRepository"
+            parent="majora.doctrine_repository.abstract"
+            public="false"
+        >
+            <factory service="doctrine" method="getRepository" />
+            <argument>DematimbreSiMajoraNamespace:MajoraEntity</argument>
+            <argument>ddp_em</argument>
+        </service>
+
+        <!-- MajoraEntity Form Type -->
+        <service id="dematimbre.majora_entity.form_type"
+            class="Dematimbre\Si\Bundle\MajoraNamespaceBundle\Form\Type\MajoraEntityType"
+            public="true"
+        >
+            <tag name="form.type" alias="majora_entity" />
+        </service>
+
+    </services>
+
+</container>

@@ -1,0 +1,8 @@
+# @MajoraGenerator({"include_routing": {"target": "../routing.yml"}})
+# @MajoraGenerator({"include_routing": {"route": "dematimbre_api_majora_entity"}})
+# @MajoraGenerator({"include_routing": {"resource": "routing/majora_entity.yml"}})
+# @MajoraGenerator({"include_routing": {"prefix": "/majora_entitys"}})
+
+# generated routes
+auto_dematimbre_api_majora_entity:
+    resource: "auto/auto_majora_entity.yml"
